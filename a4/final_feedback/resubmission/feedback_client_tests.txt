@@ -1,0 +1,122 @@
+
+======================================================================
+FAIL: test_client_decodeemote (__main__.TestBufServer) [Client should correctly decode and display emote]
+Client should correctly decode and display emote.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 255, in test_client_decodeemote
+    self.assertTrue(image_displayed)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_client_encodeemote (__main__.TestBufServer) [Client process should not unexpectedly terminate before entire test input was written to stdin]
+Test if client correctly encodes and sends emote to server.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 196, in test_client_encodeemote
+    self.assertTrue(client_input_complete)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_client_encodeemote (__main__.TestBufServer) [Client should correctly encode emote and send to server]
+Test if client correctly encodes and sends emote to server.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 202, in test_client_encodeemote
+    self.assertIn(b'Success', sout)
+AssertionError: b'Success' not found in b'Error: Did not receive username in correct protocol message format from client\n'
+
+======================================================================
+FAIL: test_client_oversizedemote (__main__.TestBufServer) [Client process should not unexpectedly terminate before entire test input was written to stdin]
+Test if client refuses to send oversized emote.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 297, in test_client_oversizedemote
+    self.assertTrue(client_input_complete)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_client_oversizedemote (__main__.TestBufServer) [Ensure that clients behaved correctly, as determined by whether our test server reports success.]
+Test if client refuses to send oversized emote.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 306, in test_client_oversizedemote
+    self.assertIn(b'Success', sout)
+AssertionError: b'Success' not found in b'Error: Did not receive username in correct protocol message format from client\n'
+
+======================================================================
+FAIL: test_splitting_messages (__main__.TestBufServer) [Client process should not unexpectedly terminate before entire test input was written to stdin]
+Client reads an oversized message from stdin
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 146, in test_splitting_messages
+    self.assertTrue(client_input_complete)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_splitting_messages (__main__.TestBufServer) [Ensure that your clients behaved correctly, as determined by whether our test server reports success.]
+Client reads an oversized message from stdin
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 152, in test_splitting_messages
+    self.assertIn(b'Success', sout)
+AssertionError: b'Success' not found in b"Error: Did not receive username in correct protocol message format from client\nb'1user1\\n\\r'\n"
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [Client process should not unexpectedly terminate before entire test input was written to stdin]
+Two clients connect to server and send messages to each other.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 82, in test_two_clients
+    self.assertTrue(client_input_complete)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [Client 2 should receive message from client 1]
+Two clients connect to server and send messages to each other.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 88, in test_two_clients
+    self.assertIn(b'test message 1', c2out)
+AssertionError: b'test message 1' not found in b'Please enter a username: '
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [Client 1 should receive message from client 2]
+Two clients connect to server and send messages to each other.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 91, in test_two_clients
+    self.assertIn(b'test message 2', c1out)
+AssertionError: b'test message 2' not found in b'Please enter a username: '
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [Client 2 should prints message in correct format (e.g., colon after username, LF-terminated message]
+Two clients connect to server and send messages to each other.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 94, in test_two_clients
+    self.assertIn(b'user1: test message 1\n', c2out)
+AssertionError: b'user1: test message 1\n' not found in b'Please enter a username: '
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [Client 1 should print message in correct format (e.g., colon after username, LF-terminated message]
+Two clients connect to server and send messages to each other.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 97, in test_two_clients
+    self.assertIn(b'user2: test message 2\n', c1out)
+AssertionError: b'user2: test message 2\n' not found in b'Please enter a username: '
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [Clients should behaved correctly (e.g., sent protocol messages in correct format), as determined by whether our test server reports success.]
+Two clients connect to server and send messages to each other.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_subtests.py", line 100, in test_two_clients
+    self.assertIn(b'Success', sout)
+AssertionError: b'Success' not found in b"Error: Did not receive username in correct protocol message format from client\nb'1user1\\n\\r'\nb'1user2\\n\\r'\n"
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.141s
+
+FAILED (failures=13)

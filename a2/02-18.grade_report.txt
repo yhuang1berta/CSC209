@@ -1,0 +1,24 @@
+Mark Summary for Assignment 2 (02-18), submitted by huang853
+
+ArgumentsTest: 0.5 / 2
+	- Failed at least one basic test ['createfile_extraargs', 'createfile_noarg']
+CreatefileTest: 0.75 / 3
+	- Failed at least one basic test ['emptyfs']
+DeletefileTest: 3 / 3
+	- Completed basic tests ['nodata_fentry', 'nodata_fnodes']
+	- Completed special cases ['onedatablock_fentry', 'onedatablock_fnodes', 'multipledatablock_fentry', 'multipledatablock_fnodes']
+	- Completed comprehensive tests ['filenotfound']
+ReadfileTest: 4 / 4
+	- Completed basic tests ['firstfile_start0_lessthanblocksize']
+	- Completed special cases ['firstfile_start2_lessthanblocksize', 'firstfile_start0_morethanblocksize', 'firstfile_start10_morethanblocksize', 'firstfile_start3_morethandoubleblocksize', 'middlefile', 'blankfentry_before_file']
+	- Completed comprehensive tests ['filenotfound', 'startinvalid', 'lengthinvalid']
+WritefileTest: 2.5 / 3
+	- Completed basic tests ['test_size0_lessthanblocksize']
+	- Failed at least one special case test ['size0_morethanblocksize', 'overwriting_lessthanblocksize', 'largesize_noallocneeded', 'largesize_noallocneeded']
+	- Completed comprehensive tests ['filenotfound', 'diskfull_size0', 'diskfull_largesize']
+BadFSTest: 1.0 / 2
+	- Completed basic tests ['badfirstindex']
+	- Failed at least one comprehensive test ['invalidfname']
+Different FS Parameters:  1 / 3
+	- 3 of 6 tests passed
+Total score: 12.75 / 20

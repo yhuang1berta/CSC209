@@ -1,0 +1,32 @@
+==6108== Memcheck, a memory error detector
+==6108== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==6108== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==6108== Command: ./a.out
+==6108== 
+==6108== Invalid write of size 4
+==6108==    at 0x108668: f (valgrind.c:6)
+==6108==    by 0x108679: main (valgrind.c:11)
+==6108==  Address 0x522d068 is 0 bytes after a block of size 40 alloc'd
+==6108==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6108==    by 0x10865B: f (valgrind.c:5)
+==6108==    by 0x108679: main (valgrind.c:11)
+==6108== 
+==6108== 
+==6108== HEAP SUMMARY:
+==6108==     in use at exit: 40 bytes in 1 blocks
+==6108==   total heap usage: 1 allocs, 0 frees, 40 bytes allocated
+==6108== 
+==6108== 40 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==6108==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==6108==    by 0x10865B: f (valgrind.c:5)
+==6108==    by 0x108679: main (valgrind.c:11)
+==6108== 
+==6108== LEAK SUMMARY:
+==6108==    definitely lost: 40 bytes in 1 blocks
+==6108==    indirectly lost: 0 bytes in 0 blocks
+==6108==      possibly lost: 0 bytes in 0 blocks
+==6108==    still reachable: 0 bytes in 0 blocks
+==6108==         suppressed: 0 bytes in 0 blocks
+==6108== 
+==6108== For counts of detected and suppressed errors, rerun with: -v
+==6108== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

@@ -1,0 +1,4 @@
+Test files integrity check passed.
+makefile does not rebuild the minimum number of targets
+Basic test not implemented correctly when executable fails.
+1 / 3

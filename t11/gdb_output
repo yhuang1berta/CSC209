@@ -1,0 +1,67 @@
+Script started on 2020-03-30 00:29:38-0400
+~/209_repo/t11$ gdb chat_server
+GNU gdb (Ubuntu 8.1-0ubuntu3.2) 8.1.0.20180409-git
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from chat_server...done.
+(gdb) break 149
+Breakpoint 1 at 0x2dbb: file chat_server.c, line 149.
+(gdb) run
+Starting program: /student/huang853/209_repo/t11/chat_server 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Accepted connection
+
+Breakpoint 1, main () at chat_server.c:149
+149	            int client_closed = read_from_client(curr);
+(gdb) l
+144	        while (curr) {
+145	            if (!FD_ISSET(curr->sock_fd, &listen_fds)) {
+146	                curr = curr->next;
+147	                continue;
+148	            }
+149	            int client_closed = read_from_client(curr);
+150	            
+151	            // If error encountered when receiving data
+152	            if (client_closed == -1) {
+153	                perror("read");
+(gdb) print &(curr->buf[K[K[Kinbuf)
+$1 = (int *) 0x60f0000000e0
+(gdb) step
+read_from_client (curr=0x60f000000040) at chat_helpers.c:46
+46	    return read_from_socket(curr->sock_fd, curr->buf, &(curr->inbuf));
+(gdb) print &(curr->inbuf[K[K[K[K[K[K[K[K[K[K[K[K[K&(curr->inbuf)
+$2 = (int *) 0x60f000000064
+(gdb) exit[K[K[K[Kdisplay curr->inbuf
+1: curr->inbuf = 0
+(gdb) next
+47	}
+1: curr->inbuf = 5
+(gdb) next
+main () at chat_server.c:152
+152	            if (client_closed == -1) {
+(gdb) print curr->inbuf
+$3 = 0
+(gdb) exit
+Undefined command: "exit".  Try "help".
+(gdb) q
+A debugging session is active.
+
+	Inferior 1 [process 9196] will be killed.
+
+Quit anyway? (y or n) y
+~/209_repo/t11$ exit
+exit
+
+Script done on 2020-03-30 00:39:37-0400

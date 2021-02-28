@@ -1,0 +1,68 @@
+F.FFF.FFF.
+======================================================================
+FAIL: test_badname_error (__main__.TestBufServer)
+Test to see if server sends back correct error message when client connects with bad name.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 234, in test_badname_error
+    self.assertTrue(cstatus == 0, "If your server behaved as required, our test client will terminate with exit status 0.")
+AssertionError: False is not true : If your server behaved as required, our test client will terminate with exit status 0.
+
+======================================================================
+FAIL: test_fast (__main__.TestBufServer)
+Client with "fast" network connection sends multiple messages that the server may receive in a single read
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 171, in test_fast
+    self.assertTrue(cstatus == 0, "If your server behaved as required, our test client will terminate with exit status 0.")
+AssertionError: False is not true : If your server behaved as required, our test client will terminate with exit status 0.
+
+======================================================================
+FAIL: test_kick_server (__main__.TestBufServer)
+Admin user kicks another user from server
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 192, in test_kick_server
+    self.assertTrue(cstatus == 0, "If your server behaved as required, our test client will terminate with exit status 0.")
+AssertionError: False is not true : If your server behaved as required, our test client will terminate with exit status 0.
+
+======================================================================
+FAIL: test_long_msg (__main__.TestBufServer)
+Client sends excessively long message
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 149, in test_long_msg
+    self.assertTrue(cstatus == 0, "If your server behaved as required, our test client will terminate with exit status 0.")
+AssertionError: False is not true : If your server behaved as required, our test client will terminate with exit status 0.
+
+======================================================================
+FAIL: test_one_client (__main__.TestBufServer)
+Client connects to server and sends valid username and message
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 38, in test_one_client
+    self.assertIn(b'Musashi', sout, "Ensure that server prints log message for the connecting user")
+AssertionError: b'Musashi' not found in b'Accepted connection\nClient 4 user name is Musash.\nEchoing message from Musash.\nClient 4 disconnected\n' : Ensure that server prints log message for the connecting user
+
+======================================================================
+FAIL: test_slow (__main__.TestBufServer)
+Client with "slow" connection sends a message that the server may need to receive over multiple reads
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 127, in test_slow
+    self.assertTrue(cstatus == 0, "If your server behaved as required, our test client will terminate with exit status 0.")
+AssertionError: False is not true : If your server behaved as required, our test client will terminate with exit status 0.
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer)
+Two clients communicate with each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 83, in test_two_clients
+    self.assertTrue(cstatus == 0, "If your server behaved as required, our test client will terminate with exit status 0.")
+AssertionError: False is not true : If your server behaved as required, our test client will terminate with exit status 0.
+
+----------------------------------------------------------------------
+Ran 10 tests in 6.558s
+
+FAILED (failures=7)

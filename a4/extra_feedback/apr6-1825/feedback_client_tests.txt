@@ -1,0 +1,59 @@
+FEEEEE
+======================================================================
+ERROR: test_client_encodeemote (__main__.TestBufServer)
+Test if client correctly encodes and sends emote to server.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 182, in test_client_encodeemote
+    c1_p.stdin.flush()
+BrokenPipeError: [Errno 32] Broken pipe
+
+======================================================================
+ERROR: test_client_oversizedemote (__main__.TestBufServer)
+Test if client refuses to send oversized emote.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 253, in test_client_oversizedemote
+    c1_p.stdin.flush()
+BrokenPipeError: [Errno 32] Broken pipe
+
+======================================================================
+ERROR: test_splitting_messages (__main__.TestBufServer)
+Client reads an oversized message from stdin
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 147, in test_splitting_messages
+    c1_p.stdin.flush()
+BrokenPipeError: [Errno 32] Broken pipe
+
+======================================================================
+ERROR: test_two_clients (__main__.TestBufServer)
+Two clients connect to server and send messages to each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 45, in test_two_clients
+    c1_p.stdin.flush()
+BrokenPipeError: [Errno 32] Broken pipe
+
+======================================================================
+ERROR: test_two_clients_format (__main__.TestBufServer)
+Two clients connect to server and send messages to each other.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 99, in test_two_clients_format
+    c1_p.stdin.flush()
+BrokenPipeError: [Errno 32] Broken pipe
+
+======================================================================
+FAIL: test_client_decodeemote (__main__.TestBufServer)
+Test if client correctly decodes and displays emote.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 233, in test_client_decodeemote
+    self.assertTrue(image_displayed)
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 6 tests in 2.437s
+
+FAILED (failures=1, errors=5)

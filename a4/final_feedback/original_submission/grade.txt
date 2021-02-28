@@ -1,0 +1,65 @@
+Client-side tests:
+==================
+
+Emote decode test: Failed
+Emote decode test: 0.0/2
+
+Emote encode test: Failed
+Emote encode test: 0.0/2
+
+Oversized emote test: Failed
+Oversized emote test: 0.0/2
+
+Splitting long messages test: Failed using test server, but partially passed using own submitted server
+Splitting long messages test: Client terminated unexpectedly before test was complete
+Splitting long messages test: 1.3/3
+
+Client message protocol test: Incorrect message format used
+Client message protocol test: Client 1 successfully received test message
+Client message protocol test: Client 2 successfully received test message
+Client message protocol test: 0.0/3
+
+Client-side tests total: 1.3/12
+
+Server-side tests:
+==================
+
+Single client test: Passed
+Single client test: 2.0/2
+
+Two clients test 1: Failed, when first client sends user name before the next client connects
+Two clients test 2: Failed, when both clients send user name at the same time
+Partial marks awarded after re-running test with submitted client, instead of our test client
+Two clients test: 2.0/3
+
+Bad user name test: Failed
+Bad user name test: 0.0/1
+
+Duplicate user name test: Passed
+Duplicate user name test: Address sanitizer error encountered
+Duplicate user name test: 0.9/1
+
+Long message (exceeding max length) test: Failed
+Long message (exceeding max length) test: 0.0/1
+
+Long name (exceeding max length) test: Passed
+Long name (exceeding max length) test: Address sanitizer error encountered
+Long name (exceeding max length) test: 0.9/1
+
+User name with space test: Passed
+User name with space test: Address sanitizer error encountered
+User name with space test: 0.9/1
+
+Fast client test: Failed
+Fast client test: 0.0/2
+
+Slow client test: Failed
+Slow client test: 0.0/2
+
+Kick test: Failed
+Kick test: 0.0/2
+
+Server-side tests total: 6.7/16
+
+Grade: 8.0/28
+git revision graded: cb746a50eb115827166658ebc3bd9c003f2a3437

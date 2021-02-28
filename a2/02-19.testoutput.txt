@@ -1,0 +1,168 @@
+Autotested Results for N/A submitted by 
+Generated at N/A
+
+Summary of Results: 32 out of 37 tests successfully passed
+--
+
+Tests for args_tests.ArgumentsTest (5/5 passed)
+--
+
+1) args_tests.ArgumentsTest.test_createfile_extraargs                                 .. ok!
+2) args_tests.ArgumentsTest.test_createfile_noarg                                     .. ok!
+3) args_tests.ArgumentsTest.test_deletefile_noarg                                     .. ok!
+4) args_tests.ArgumentsTest.test_readfile_missingarg                                  .. ok!
+5) args_tests.ArgumentsTest.test_readfile_nonnumericarg                               .. ok!
+
+
+Tests for create_tests.CreatefileTest (2/6 passed)
+--
+
+1) create_tests.CreatefileTest.test_duplicatefilename                                 .. ok!
+2) create_tests.CreatefileTest.test_nofentry                                          .. ok!
+3) create_tests.CreatefileTest.test_emptyfentryatend                                  .. failed
+.. because False is not true (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 243, in _t
+        self.assertTrue(_diff_files(outputname, solname, start, len))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 682, in assertTrue
+        raise self.failureException(msg)
+
+    AssertionError: False is not true
+
+
+4) create_tests.CreatefileTest.test_emptyfentryinmiddle                               .. failed
+.. because False is not true (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 243, in _t
+        self.assertTrue(_diff_files(outputname, solname, start, len))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 682, in assertTrue
+        raise self.failureException(msg)
+
+    AssertionError: False is not true
+
+
+5) create_tests.CreatefileTest.test_emptyfs                                           .. failed
+.. because False is not true (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 243, in _t
+        self.assertTrue(_diff_files(outputname, solname, start, len))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 682, in assertTrue
+        raise self.failureException(msg)
+
+    AssertionError: False is not true
+
+
+6) create_tests.CreatefileTest.test_nametoolong                                       .. failed
+.. because '' == '' (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 230, in _t
+        self.assertNotEqual(stderr.rstrip(), '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 838, in assertNotEqual
+        raise self.failureException(msg)
+
+    AssertionError: '' == ''
+
+
+
+
+Tests for delete_tests.DeletefileTest (7/7 passed)
+--
+
+1) delete_tests.DeletefileTest.test_filenotfound                                      .. ok!
+2) delete_tests.DeletefileTest.test_multipledatablock_fentry                          .. ok!
+3) delete_tests.DeletefileTest.test_multipledatablock_fnodes                          .. ok!
+4) delete_tests.DeletefileTest.test_nodata_fentry                                     .. ok!
+5) delete_tests.DeletefileTest.test_nodata_fnodes                                     .. ok!
+6) delete_tests.DeletefileTest.test_onedatablock_fentry                               .. ok!
+7) delete_tests.DeletefileTest.test_onedatablock_fnodes                               .. ok!
+
+
+Tests for read_tests.ReadfileTest (10/10 passed)
+--
+
+1) read_tests.ReadfileTest.test_blankfentry_before_file                               .. ok!
+2) read_tests.ReadfileTest.test_filenotfound                                          .. ok!
+3) read_tests.ReadfileTest.test_firstfile_start0_lessthanblocksize                    .. ok!
+4) read_tests.ReadfileTest.test_firstfile_start0_morethanblocksize                    .. ok!
+5) read_tests.ReadfileTest.test_firstfile_start10_morethanblocksize                   .. ok!
+6) read_tests.ReadfileTest.test_firstfile_start2_lessthanblocksize                    .. ok!
+7) read_tests.ReadfileTest.test_firstfile_start3_morethandoubleblocksize              .. ok!
+8) read_tests.ReadfileTest.test_lengthinvalid                                         .. ok!
+9) read_tests.ReadfileTest.test_middlefile                                            .. ok!
+10) read_tests.ReadfileTest.test_startinvalid                                          .. ok!
+
+
+Tests for write_tests.WritefileTest (7/7 passed)
+--
+
+1) write_tests.WritefileTest.test_diskfull_largesize                                  .. ok!
+2) write_tests.WritefileTest.test_diskfull_size0                                      .. ok!
+3) write_tests.WritefileTest.test_filenotfound                                        .. ok!
+4) write_tests.WritefileTest.test_largesize_noallocneeded                             .. ok!
+5) write_tests.WritefileTest.test_overwriting_lessthanblocksize                       .. ok!
+6) write_tests.WritefileTest.test_size0_lessthanblocksize                             .. ok!
+7) write_tests.WritefileTest.test_size0_morethanblocksize                             .. ok!
+
+
+Tests for bad_fs.BadFSTest (1/2 passed)
+--
+
+1) bad_fs.BadFSTest.test_badfirstindex                                                .. ok!
+2) bad_fs.BadFSTest.test_invalidfname                                                 .. failed
+.. because '' == '' (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 230, in _t
+        self.assertNotEqual(stderr.rstrip(), '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 838, in assertNotEqual
+        raise self.failureException(msg)
+
+    AssertionError: '' == ''
+
+
+
+

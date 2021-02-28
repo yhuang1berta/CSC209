@@ -1,0 +1,610 @@
+Autotested Results for A2 submitted by Ye Huang (huang853)
+Generated at 2020-02-15T02:10:21
+
+Summary of Results: 16 out of 37 tests successfully passed
+--
+
+Tests for args_tests.ArgumentsTest (3/5 passed)
+--
+
+1) args_tests.ArgumentsTest.test_createfile_noarg                                     .. ok!
+2) args_tests.ArgumentsTest.test_deletefile_noarg                                     .. ok!
+3) args_tests.ArgumentsTest.test_readfile_missingarg                                  .. ok!
+4) args_tests.ArgumentsTest.test_createfile_extraargs                                 .. failed (solved)
+.. because '' == '' (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 230, in _t
+        self.assertNotEqual(stderr.rstrip(), '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 838, in assertNotEqual
+        raise self.failureException(msg)
+
+    AssertionError: '' == ''
+
+
+5) args_tests.ArgumentsTest.test_readfile_nonnumericarg                               .. failed (solved)
+.. because '' == '' (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 230, in _t
+        self.assertNotEqual(stderr.rstrip(), '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 838, in assertNotEqual
+        raise self.failureException(msg)
+
+    AssertionError: '' == ''
+
+
+
+
+Tests for create_tests.CreatefileTest (2/6 passed)
+--
+
+1) create_tests.CreatefileTest.test_duplicatefilename                                 .. ok!
+2) create_tests.CreatefileTest.test_nofentry                                          .. ok!
+3) create_tests.CreatefileTest.test_emptyfentryatend                                  .. failed
+.. because 'Error: No empty fentry could be found\n' != ''
+- Error: No empty fentry could be found
+ (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 241, in _t
+        self.assertEqual(stderr, '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'Error: No empty fentry could be found\n' != ''
+    - Error: No empty fentry could be found
+
+
+
+4) create_tests.CreatefileTest.test_emptyfentryinmiddle                               .. failed
+.. because 'Error: No empty fentry could be found\n' != ''
+- Error: No empty fentry could be found
+ (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 241, in _t
+        self.assertEqual(stderr, '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'Error: No empty fentry could be found\n' != ''
+    - Error: No empty fentry could be found
+
+
+
+5) create_tests.CreatefileTest.test_emptyfs                                           .. failed
+.. because False is not true (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 243, in _t
+        self.assertTrue(_diff_files(outputname, solname, start, len))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 682, in assertTrue
+        raise self.failureException(msg)
+
+    AssertionError: False is not true
+
+
+6) create_tests.CreatefileTest.test_nametoolong                                       .. failed
+.. because '' == '' (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 230, in _t
+        self.assertNotEqual(stderr.rstrip(), '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 838, in assertNotEqual
+        raise self.failureException(msg)
+
+    AssertionError: '' == ''
+
+
+
+
+Tests for delete_tests.DeletefileTest (2/7 passed)
+--
+
+1) delete_tests.DeletefileTest.test_filenotfound                                      .. ok!
+2) delete_tests.DeletefileTest.test_nodata_fentry                                     .. ok!
+3) delete_tests.DeletefileTest.test_multipledatablock_fentry                          .. failed
+.. because 'Error: trying to read non-existing file\n' != ''
+- Error: trying to read non-existing file
+ (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 241, in _t
+        self.assertEqual(stderr, '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'Error: trying to read non-existing file\n' != ''
+    - Error: trying to read non-existing file
+
+
+
+4) delete_tests.DeletefileTest.test_multipledatablock_fnodes                          .. failed
+.. because 'Error: trying to read non-existing file\n' != ''
+- Error: trying to read non-existing file
+ (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 241, in _t
+        self.assertEqual(stderr, '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'Error: trying to read non-existing file\n' != ''
+    - Error: trying to read non-existing file
+
+
+
+5) delete_tests.DeletefileTest.test_nodata_fnodes                                     .. failed
+.. because False is not true (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 243, in _t
+        self.assertTrue(_diff_files(outputname, solname, start, len))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 682, in assertTrue
+        raise self.failureException(msg)
+
+    AssertionError: False is not true
+
+
+6) delete_tests.DeletefileTest.test_onedatablock_fentry                               .. failed
+.. because 'ASAN:DEADLYSIGNAL\n======================[670 chars]NG\n' != ''
+Diff is 728 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 241, in _t
+        self.assertEqual(stderr, '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'ASAN:DEADLYSIGNAL\n======================[670 chars]NG\n' != ''
+    Diff is 728 characters long. Set self.maxDiff to None to see it.
+
+
+7) delete_tests.DeletefileTest.test_onedatablock_fnodes                               .. failed
+.. because 'ASAN:DEADLYSIGNAL\n======================[670 chars]NG\n' != ''
+Diff is 728 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 241, in _t
+        self.assertEqual(stderr, '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'ASAN:DEADLYSIGNAL\n======================[670 chars]NG\n' != ''
+    Diff is 728 characters long. Set self.maxDiff to None to see it.
+
+
+
+
+Tests for read_tests.ReadfileTest (3/10 passed)
+--
+
+1) read_tests.ReadfileTest.test_filenotfound                                          .. ok!
+2) read_tests.ReadfileTest.test_lengthinvalid                                         .. ok!
+3) read_tests.ReadfileTest.test_startinvalid                                          .. ok!
+4) read_tests.ReadfileTest.test_blankfentry_before_file                               .. failed
+.. because 'Error: trying to read non-existing file\n' != ''
+- Error: trying to read non-existing file
+ (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 181, in _t
+        self.assertEqual(stderr, expected_stderr)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'Error: trying to read non-existing file\n' != ''
+    - Error: trying to read non-existing file
+
+
+
+5) read_tests.ReadfileTest.test_firstfile_start0_lessthanblocksize                    .. failed
+.. because 'ASAN:DEADLYSIGNAL\n======================[891 chars]NG\n' != ''
+Diff is 952 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 181, in _t
+        self.assertEqual(stderr, expected_stderr)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'ASAN:DEADLYSIGNAL\n======================[891 chars]NG\n' != ''
+    Diff is 952 characters long. Set self.maxDiff to None to see it.
+
+
+6) read_tests.ReadfileTest.test_firstfile_start0_morethanblocksize                    .. failed
+.. because "========================================[2691 chars]NG\n" != ''
+Diff is 2789 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 181, in _t
+        self.assertEqual(stderr, expected_stderr)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: "========================================[2691 chars]NG\n" != ''
+    Diff is 2789 characters long. Set self.maxDiff to None to see it.
+
+
+7) read_tests.ReadfileTest.test_firstfile_start10_morethanblocksize                   .. failed
+.. because 'ASAN:DEADLYSIGNAL\n======================[891 chars]NG\n' != ''
+Diff is 952 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 181, in _t
+        self.assertEqual(stderr, expected_stderr)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'ASAN:DEADLYSIGNAL\n======================[891 chars]NG\n' != ''
+    Diff is 952 characters long. Set self.maxDiff to None to see it.
+
+
+8) read_tests.ReadfileTest.test_firstfile_start2_lessthanblocksize                    .. failed
+.. because 'ASAN:DEADLYSIGNAL\n======================[891 chars]NG\n' != ''
+Diff is 952 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 181, in _t
+        self.assertEqual(stderr, expected_stderr)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'ASAN:DEADLYSIGNAL\n======================[891 chars]NG\n' != ''
+    Diff is 952 characters long. Set self.maxDiff to None to see it.
+
+
+9) read_tests.ReadfileTest.test_firstfile_start3_morethandoubleblocksize              .. failed
+.. because 'ASAN:DEADLYSIGNAL\n======================[891 chars]NG\n' != ''
+Diff is 952 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 181, in _t
+        self.assertEqual(stderr, expected_stderr)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'ASAN:DEADLYSIGNAL\n======================[891 chars]NG\n' != ''
+    Diff is 952 characters long. Set self.maxDiff to None to see it.
+
+
+10) read_tests.ReadfileTest.test_middlefile                                            .. failed
+.. because 'ASAN:DEADLYSIGNAL\n======================[707 chars]NG\n' != ''
+Diff is 765 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 181, in _t
+        self.assertEqual(stderr, expected_stderr)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'ASAN:DEADLYSIGNAL\n======================[707 chars]NG\n' != ''
+    Diff is 765 characters long. Set self.maxDiff to None to see it.
+
+
+
+
+Tests for write_tests.WritefileTest (4/7 passed)
+--
+
+1) write_tests.WritefileTest.test_diskfull_largesize                                  .. ok!
+2) write_tests.WritefileTest.test_diskfull_size0                                      .. ok!
+3) write_tests.WritefileTest.test_filenotfound                                        .. ok!
+4) write_tests.WritefileTest.test_largesize_noallocneeded                             .. ok!
+5) write_tests.WritefileTest.test_overwriting_lessthanblocksize                       .. failed
+.. because 'ASAN:DEADLYSIGNAL\n======================[906 chars]NG\n' != ''
+Diff is 967 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 241, in _t
+        self.assertEqual(stderr, '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'ASAN:DEADLYSIGNAL\n======================[906 chars]NG\n' != ''
+    Diff is 967 characters long. Set self.maxDiff to None to see it.
+
+
+6) write_tests.WritefileTest.test_size0_lessthanblocksize                             .. failed
+.. because 'ASAN:DEADLYSIGNAL\n======================[906 chars]NG\n' != ''
+Diff is 967 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 241, in _t
+        self.assertEqual(stderr, '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'ASAN:DEADLYSIGNAL\n======================[906 chars]NG\n' != ''
+    Diff is 967 characters long. Set self.maxDiff to None to see it.
+
+
+7) write_tests.WritefileTest.test_size0_morethanblocksize                             .. failed
+.. because 'ASAN:DEADLYSIGNAL\n======================[906 chars]NG\n' != ''
+Diff is 967 characters long. Set self.maxDiff to None to see it. (details below):
+
+    Traceback (most recent call last):
+
+      File "/usr/lib/python3.6/unittest/case.py", line 59, in testPartExecutor
+        yield
+
+      File "/usr/lib/python3.6/unittest/case.py", line 605, in run
+        testMethod()
+
+      File "/res/peters43/209/huang853/a2/test_helpers.py", line 241, in _t
+        self.assertEqual(stderr, '')
+
+      File "/usr/lib/python3.6/unittest/case.py", line 829, in assertEqual
+        assertion_func(first, second, msg=msg)
+
+      File "/usr/lib/python3.6/unittest/case.py", line 1203, in assertMultiLineEqual
+        self.fail(self._formatMessage(msg, standardMsg))
+
+      File "/usr/lib/python3.6/unittest/case.py", line 670, in fail
+        raise self.failureException(msg)
+
+    AssertionError: 'ASAN:DEADLYSIGNAL\n======================[906 chars]NG\n' != ''
+    Diff is 967 characters long. Set self.maxDiff to None to see it.
+
+
+
+
+Tests for bad_fs.BadFSTest (2/2 passed)
+--
+
+1) bad_fs.BadFSTest.test_badfirstindex                                                .. ok!
+2) bad_fs.BadFSTest.test_invalidfname                                                 .. ok!
+
+

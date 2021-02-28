@@ -1,0 +1,21 @@
+===== Question 1 =====
+B, E
+===== Question 2 =====
+ABCEBDE
+ABDEBCE
+ABBCDEE
+ABBCEDE
+ABBDECE
+ABBDCEE
+ABCBDEE
+ABCBEDE
+ABDBCEE
+ABDBECE
+10
+===== Question 3 =====
+16
+===== Question 4 =====
+8832 -> 8834 -> 8838
+8832 -> 8836
+8832 -> 8833 -> 8835 -> 8842
+8832 -> 8833 -> 8839

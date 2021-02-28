@@ -1,0 +1,8 @@
+socket()
+socket()
+bind()
+listen()
+accept()
+connect()
+send()
+recv()

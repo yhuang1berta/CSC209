@@ -1,0 +1,176 @@
+
+======================================================================
+FAIL: test_badname_error (__main__.TestBufServer) [If your server behaved as required, our test client will terminate with exit status 0.]
+Test to see if server sends back correct error message when client connects with bad name.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 338, in test_badname_error
+    self.assertTrue(cstatus == 0)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_badname_error (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Test to see if server sends back correct error message when client connects with bad name.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 344, in test_badname_error
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'\n=================================================================\n==4038==ERROR: LeakSanitizer: detected memory leaks\n\nDirect leak of 65550 byte(s) in 1 object(s) allocated from:\n    #0 0x7f03f0b05b40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x5597a9ad92f3 in set_username /csc209-w20/tutorials/w20/mark_a4/chat_helpers.c:49\n    #2 0x5597a9ad7060 in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:170\n    #3 0x7f03f0657b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nSUMMARY: AddressSanitizer: 65550 byte(s) leaked in 1 allocation(s).\n'
+
+======================================================================
+FAIL: test_dupname_clients (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Two clients attempt to use same user name
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 315, in test_dupname_clients
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'\n=================================================================\n==4041==ERROR: LeakSanitizer: detected memory leaks\n\nDirect leak of 131100 byte(s) in 2 object(s) allocated from:\n    #0 0x7f49cb3c3b40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x55be7c6bb2f3 in set_username /csc209-w20/tutorials/w20/mark_a4/chat_helpers.c:49\n    #2 0x55be7c6b9060 in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:170\n    #3 0x7f49caf15b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nDirect leak of 65584 byte(s) in 1 object(s) allocated from:\n    #0 0x7f49cb3c3b40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x55be7c6b82b0 in accept_connection /csc209-w20/tutorials/w20/mark_a4/chat_server.c:48\n    #2 0x55be7c6b8d0b in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:135\n    #3 0x7f49caf15b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nSUMMARY: AddressSanitizer: 196684 byte(s) leaked in 3 allocation(s).\n'
+
+======================================================================
+FAIL: test_fast (__main__.TestBufServer) [If your server behaved as required, our test client will terminate with exit status 0.]
+Client with "fast" network connection sends multiple messages that the server may receive in a single read
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 251, in test_fast
+    self.assertTrue(cstatus == 0)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_fast (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Client with "fast" network connection sends multiple messages that the server may receive in a single read
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 257, in test_fast
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'\n=================================================================\n==4044==ERROR: LeakSanitizer: detected memory leaks\n\nDirect leak of 131100 byte(s) in 2 object(s) allocated from:\n    #0 0x7f492bd5eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x55d9d94a62f3 in set_username /csc209-w20/tutorials/w20/mark_a4/chat_helpers.c:49\n    #2 0x55d9d94a4060 in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:170\n    #3 0x7f492b8b0b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nDirect leak of 65584 byte(s) in 1 object(s) allocated from:\n    #0 0x7f492bd5eb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x55d9d94a32b0 in accept_connection /csc209-w20/tutorials/w20/mark_a4/chat_server.c:48\n    #2 0x55d9d94a3d0b in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:135\n    #3 0x7f492b8b0b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nSUMMARY: AddressSanitizer: 196684 byte(s) leaked in 3 allocation(s).\n'
+
+======================================================================
+FAIL: test_kick_server (__main__.TestBufServer) [If your server behaved as required, our test client will terminate with exit status 0.]
+Admin user kicks another user from server
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 280, in test_kick_server
+    self.assertTrue(cstatus == 0)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_kick_server (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Admin user kicks another user from server
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 286, in test_kick_server
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'\n=================================================================\n==4047==ERROR: LeakSanitizer: detected memory leaks\n\nDirect leak of 131100 byte(s) in 2 object(s) allocated from:\n    #0 0x7f15a8436b40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x55d6138722f3 in set_username /csc209-w20/tutorials/w20/mark_a4/chat_helpers.c:49\n    #2 0x55d613870060 in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:170\n    #3 0x7f15a7f88b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nDirect leak of 65584 byte(s) in 1 object(s) allocated from:\n    #0 0x7f15a8436b40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x55d61386f2b0 in accept_connection /csc209-w20/tutorials/w20/mark_a4/chat_server.c:48\n    #2 0x55d61386fd0b in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:135\n    #3 0x7f15a7f88b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nDirect leak of 65550 byte(s) in 1 object(s) allocated from:\n    #0 0x7f15a8436b40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x55d613871abb in get_message /csc209-w20/tutorials/w20/mark_a4/socket.c:95\n    #2 0x55d613870ead in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:203\n    #3 0x7f15a7f88b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nSUMMARY: AddressSanitizer: 262234 byte(s) leaked in 4 allocation(s).\n'
+
+======================================================================
+FAIL: test_long_msg (__main__.TestBufServer) [If your server behaved as required, our test client will terminate with exit status 0.]
+Client sends excessively long message
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 222, in test_long_msg
+    self.assertTrue(cstatus == 0)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_long_msg (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Client sends excessively long message
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 228, in test_long_msg
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'\n=================================================================\n==4050==ERROR: LeakSanitizer: detected memory leaks\n\nDirect leak of 65550 byte(s) in 1 object(s) allocated from:\n    #0 0x7f62c9158b40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x55a4f88532f3 in set_username /csc209-w20/tutorials/w20/mark_a4/chat_helpers.c:49\n    #2 0x55a4f8851060 in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:170\n    #3 0x7f62c8caab96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nSUMMARY: AddressSanitizer: 65550 byte(s) leaked in 1 allocation(s).\n'
+
+======================================================================
+FAIL: test_long_name (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Client sends excessively long user name
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 170, in test_long_name
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'ASAN:DEADLYSIGNAL\n=================================================================\n==4053==ERROR: AddressSanitizer: SEGV on unknown address 0xffffffffffffffef (pc 0x7f2f43ed8525 bp 0x7ffd0c959670 sp 0x7ffd0c959620 T0)\n==4053==The signal is caused by a WRITE memory access.\n    #0 0x7f2f43ed8524  (/usr/lib/x86_64-linux-gnu/libasan.so.4+0x26524)\n    #1 0x7f2f43f90772 in __interceptor_free (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xde772)\n    #2 0x55eb11c13ef4 in remove_client /csc209-w20/tutorials/w20/mark_a4/chat_helpers.c:23\n    #3 0x55eb11c13096 in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:266\n    #4 0x7f2f43ae2b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n    #5 0x55eb11c10f49 in _start (/csc209-w20/tutorials/w20/mark_a4/chat_server+0x1f49)\n\nAddressSanitizer can not provide additional info.\nSUMMARY: AddressSanitizer: SEGV (/usr/lib/x86_64-linux-gnu/libasan.so.4+0x26524) \n==4053==ABORTING\n'
+
+======================================================================
+FAIL: test_one_client (__main__.TestBufServer) [Ensure that server prints log message for the connecting user]
+Client connects to server and sends valid username and message
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 47, in test_one_client
+    self.assertIn(b'Musashi', sout)
+AssertionError: b'Musashi' not found in b'Accepted connection\nClient 4 user name is Musash.\nEchoing message from Musash.\nClient 4 disconnected\n'
+
+======================================================================
+FAIL: test_one_client (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Client connects to server and sends valid username and message
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 53, in test_one_client
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'\n=================================================================\n==4055==ERROR: LeakSanitizer: detected memory leaks\n\nDirect leak of 65550 byte(s) in 1 object(s) allocated from:\n    #0 0x7f1603256b40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x556026b0f2f3 in set_username /csc209-w20/tutorials/w20/mark_a4/chat_helpers.c:49\n    #2 0x556026b0d060 in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:170\n    #3 0x7f1602da8b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nSUMMARY: AddressSanitizer: 65550 byte(s) leaked in 1 allocation(s).\n'
+
+======================================================================
+FAIL: test_slow (__main__.TestBufServer) [If your server behaved as required, our test client will terminate with exit status 0.]
+Client with "slow" connection sends a message that the server may need to receive over multiple reads
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 193, in test_slow
+    self.assertTrue(cstatus == 0)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_slow (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Client with "slow" connection sends a message that the server may need to receive over multiple reads
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 199, in test_slow
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'\n=================================================================\n==4058==ERROR: LeakSanitizer: detected memory leaks\n\nDirect leak of 131100 byte(s) in 2 object(s) allocated from:\n    #0 0x7f760afadb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x56154110a2f3 in set_username /csc209-w20/tutorials/w20/mark_a4/chat_helpers.c:49\n    #2 0x561541108060 in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:170\n    #3 0x7f760aaffb96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nDirect leak of 65584 byte(s) in 1 object(s) allocated from:\n    #0 0x7f760afadb40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x5615411072b0 in accept_connection /csc209-w20/tutorials/w20/mark_a4/chat_server.c:48\n    #2 0x561541107d0b in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:135\n    #3 0x7f760aaffb96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nSUMMARY: AddressSanitizer: 196684 byte(s) leaked in 3 allocation(s).\n'
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [If your server behaved as required, our test client will terminate with exit status 0.]
+Two clients communicate with each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 105, in test_two_clients
+    self.assertTrue(cstatus == 0)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Two clients communicate with each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 111, in test_two_clients
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'\n=================================================================\n==4061==ERROR: LeakSanitizer: detected memory leaks\n\nDirect leak of 131100 byte(s) in 2 object(s) allocated from:\n    #0 0x7f89942b9b40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x55b25bbaa2f3 in set_username /csc209-w20/tutorials/w20/mark_a4/chat_helpers.c:49\n    #2 0x55b25bba8060 in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:170\n    #3 0x7f8993e0bb96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nDirect leak of 65584 byte(s) in 1 object(s) allocated from:\n    #0 0x7f89942b9b40 in __interceptor_malloc (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xdeb40)\n    #1 0x55b25bba72b0 in accept_connection /csc209-w20/tutorials/w20/mark_a4/chat_server.c:48\n    #2 0x55b25bba7d0b in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:135\n    #3 0x7f8993e0bb96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n\nSUMMARY: AddressSanitizer: 196684 byte(s) leaked in 3 allocation(s).\n'
+
+======================================================================
+FAIL: test_two_names (__main__.TestBufServer) [If your server behaved as required, our test client will terminate with exit status 0.]
+Two clients connect and enter their names at the same time, and then client 1 sends a message.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 135, in test_two_names
+    self.assertTrue(cstatus == 0)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_two_names (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Two clients connect and enter their names at the same time, and then client 1 sends a message.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 141, in test_two_names
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'ASAN:DEADLYSIGNAL\n=================================================================\n==4064==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f04bd6f17d9 bp 0x7ffccb2fc730 sp 0x7ffccb2fbe90 T0)\n==4064==The signal is caused by a READ memory access.\n==4064==Hint: address points to the zero page.\n    #0 0x7f04bd6f17d8  (/usr/lib/x86_64-linux-gnu/libasan.so.4+0x5a7d8)\n    #1 0x5628c1c5c23c in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:182\n    #2 0x7f04bd2c7b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n    #3 0x5628c1c5af49 in _start (/csc209-w20/tutorials/w20/mark_a4/chat_server+0x1f49)\n\nAddressSanitizer can not provide additional info.\nSUMMARY: AddressSanitizer: SEGV (/usr/lib/x86_64-linux-gnu/libasan.so.4+0x5a7d8) \n==4064==ABORTING\n'
+
+======================================================================
+FAIL: test_username_with_space (__main__.TestBufServer) [No Address/Leak Sanitizer errors should occur]
+Client sends username with a space
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "server_test.py", line 82, in test_username_with_space
+    self.assertNotIn(b'Sanitizer', serr)
+AssertionError: b'Sanitizer' unexpectedly found in b'ASAN:DEADLYSIGNAL\n=================================================================\n==4066==ERROR: AddressSanitizer: SEGV on unknown address 0xffffffffffffffef (pc 0x7f8498ee8525 bp 0x7ffc82f375c0 sp 0x7ffc82f37570 T0)\n==4066==The signal is caused by a WRITE memory access.\n    #0 0x7f8498ee8524  (/usr/lib/x86_64-linux-gnu/libasan.so.4+0x26524)\n    #1 0x7f8498fa0772 in __interceptor_free (/usr/lib/x86_64-linux-gnu/libasan.so.4+0xde772)\n    #2 0x560998b78ef4 in remove_client /csc209-w20/tutorials/w20/mark_a4/chat_helpers.c:23\n    #3 0x560998b78096 in main /csc209-w20/tutorials/w20/mark_a4/chat_server.c:266\n    #4 0x7f8498af2b96 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21b96)\n    #5 0x560998b75f49 in _start (/csc209-w20/tutorials/w20/mark_a4/chat_server+0x1f49)\n\nAddressSanitizer can not provide additional info.\nSUMMARY: AddressSanitizer: SEGV (/usr/lib/x86_64-linux-gnu/libasan.so.4+0x26524) \n==4066==ABORTING\n'
+
+----------------------------------------------------------------------
+Ran 11 tests in 6.987s
+
+FAILED (failures=19)

@@ -1,0 +1,32 @@
+FFF
+======================================================================
+FAIL: test_splitting_messages (__main__.TestBufServer)
+Client reads an oversized message from stdin
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 81, in test_splitting_messages
+    self.assertIn(b'Success', server_p.stdout)
+AssertionError: b'Success' not found in b'Error: Did not receive second part of split message from client\n'
+
+======================================================================
+FAIL: test_two_clients (__main__.TestBufServer)
+Two clients connect to server and send messages to each other
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 34, in test_two_clients
+    self.assertIn(b'test message 1', c2_p.stdout)
+AssertionError: b'test message 1' not found in b'Please enter a username: '
+
+======================================================================
+FAIL: test_two_clients_format (__main__.TestBufServer)
+Two clients connect to server and send messages to each other.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "client_test.py", line 59, in test_two_clients_format
+    self.assertIn(b'user1: test message 1\n', c2_p.stdout)
+AssertionError: b'user1: test message 1\n' not found in b'Please enter a username: '
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.226s
+
+FAILED (failures=3)
